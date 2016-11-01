@@ -80,8 +80,8 @@ describe("About Arrays", function() {
     expect(array).toEqual([1,2,3]);
 
     var poppedValue = array.pop();
-    expect(poppedValue).toBe(FILL_ME_IN);
-    expect(array).toEqual(FILL_ME_IN);
+    expect(poppedValue).toBe(3);
+    expect(array).toEqual([1,2]);
   });
 
   it("should know about shifting arrays", function () {

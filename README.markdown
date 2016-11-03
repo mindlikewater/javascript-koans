@@ -1,5 +1,5 @@
 # Notes
-My copy of the koans assignment can be found at: [Practice-JS-Koans](https://obsolete-hole.surge.sh/).
+My copy of the koans assignment can be found at: [Practice-JS-Koans](https://keen-liquid.surge.sh).
 
 # javascript-koans
 Based on Edgecase's fantastic

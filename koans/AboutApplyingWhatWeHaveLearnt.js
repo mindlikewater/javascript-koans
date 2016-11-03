@@ -82,15 +82,6 @@ describe("About Applying What We Have Learnt", function() {
   });
   /* try chaining range() and reduce() */
 
-  var result = _([ [0, 1], 2 ]).chain()
-                   .flatten()
-                   .map(function(x) { return x+1 } )
-                   .reduce(function (sum, x) { return sum + x })
-                   .value();
-
-  expect(result).toEqual(6);
-});
-
   /*********************************************************************************/
    it("should count the ingredient occurrence (imperative)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
@@ -108,8 +99,24 @@ describe("About Applying What We Have Learnt", function() {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
+    var ingredientCounter = _(products).chain().map(function(food) {
+        //console.log(food.ingredients);
+        return food.ingredients;
+      }).flatten()
+      .reduce(function (obj, ingredientName) {
+        //console.log(obj);
+        // console.log(ingredientName);
+        if (obj[ingredientName]) {
+          console.log(obj[ingredientName]);
+          obj[ingredientName]++;
+        } else {
+          obj[ingredientName] = 1;
+        }
+        return obj;
+      }, ingredientCount)
+      .value();
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
@@ -136,4 +143,4 @@ describe("About Applying What We Have Learnt", function() {
 
   });
   */
-// });
+ });
